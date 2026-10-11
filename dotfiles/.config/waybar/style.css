@@ -1,0 +1,66 @@
+/* Reset all default styling */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+/* The Bar itself - Minimal Floating Gray Capsule */
+window#waybar {
+    background: rgba(26, 27, 38, 0.65); /* Dark gray with 65% transparency */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Barely visible border accent */
+    border-radius: 8px;
+    color: #ffffff; /* Default text color set to pure white */
+}
+
+/* Base Workspaces Styling */
+#workspaces {
+    margin: 0 4px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #565f89; /* Dim gray for inactive workspaces so they look backgrounded */
+    background: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Active Workspace (The one you are currently on) */
+#workspaces button.active {
+    color: #ffffff; /* Crisp white for active workspace */
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+    background: transparent;
+}
+
+#workspaces button.urgent {
+    color: #f7768e; /* Kept red just for emergency alerts */
+}
+
+/* --- Right Side Modules System Styling --- */
+
+/* Uniform clean white text, spacing, and styling for all stats and the tray */
+#network,
+#cpu,
+#memory,
+#wireplumber,
+#tray,
+#clock {
+    padding: 0 10px;
+    color: #ffffff; /* All text and native elements forced to pure white */
+}
+
+/* Clear style for when audio is muted */
+#wireplumber.muted {
+    color: #565f89; /* Turns dim gray when muted */
+}
+
+/* Extra padding on the very far right edge */
+#clock {
+    font-weight: bold;
+    padding-right: 14px; 
+}

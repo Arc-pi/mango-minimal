@@ -1,0 +1,115 @@
+/* ~/.config/rofi/config.rasi */
+
+configuration {
+    modi:                       "drun,run,window";
+    show-icons:                 false;
+    display-drun:               "APPS";
+    display-run:                "RUN";
+    display-window:             "WIN";
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {c} · {t}";
+}
+
+* {
+    /* Grayish Dark Palette with ~85% transparency */
+    bg-primary:                  #1a1a1acc; /* Dark Charcoal Gray with alpha */
+    bg-selected:                 #2d2d2dff; /* Slightly lighter gray for selection */
+    fg-primary:                  #e0e0e0;   /* Off-white for softer contrast */
+    fg-muted:                    #777777;   /* Clean muted gray */
+    border-color:                #333333;   /* Low-contrast border */
+    
+    font:                        "JetBrains Mono 11";
+    
+    /* Global overrides to prevent white flashbangs */
+    background-color:            transparent;
+    text-color:                  @fg-primary;
+}
+
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       500px;
+
+    enabled:                     true;
+    border:                      1px solid;
+    border-radius:               0px; /* Kept sharp and minimal */
+    border-color:                @border-color;
+    background-color:            @bg-primary;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     15px;
+    background-color:            transparent;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @fg-muted;
+    font:                        "JetBrains Mono Bold 11";
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @fg-primary;
+    cursor:                      text;
+    placeholder:                 "...";
+    placeholder-color:           @fg-muted;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    
+    spacing:                     0px;
+    padding:                     0px 0px 10px 0px;
+    background-color:            transparent;
+}
+
+element {
+    enabled:                     true;
+    spacing:                     0px;
+    padding:                     8px 15px;
+    background-color:            transparent;
+    text-color:                  @fg-primary;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @fg-primary;
+}
+
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  @fg-primary;
+}
+
+element selected.normal {
+    background-color:            @bg-selected; /* Clean gray selection box */
+    text-color:                  @fg-primary;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
